@@ -1,0 +1,61 @@
+.register-container {
+    padding: 4em 2em;
+    margin: 0;
+    background-image: url('../../../content/images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    &-inner {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+        background: rgb(255, 255, 255);
+        padding: 2em;
+        &-form {
+            width: 100%;
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            .form-group {
+                text-align: left;
+            }
+            .register-btn {
+                width: 60%;
+                margin: 20px auto;
+            }
+        }
+    }
+    .register {
+        &-title {
+            text-align: center;
+            h1 {
+                font-weight: 600;
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+        }
+        &-footer {
+            text-align: center;
+            span {
+                &:first-child {
+                    color: rgba(0, 0, 0, 0.5);
+                }
+                &:last-child {
+                    cursor: pointer;
+                    font-weight: 500;
+                    color: rgba(#14653b, 0.75);
+                    &:hover {
+                        color: rgba(#14653b, 1);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        padding: 0em;
+        &-inner {
+            padding: 2em 1em;
+        }
+    }
+}

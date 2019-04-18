@@ -6,6 +6,7 @@ import { PortalSharedModule } from 'app/shared';
 import {
     PasswordStrengthBarComponent,
     RegisterComponent,
+    LoginComponent,
     ActivateComponent,
     PasswordComponent,
     PasswordResetInitComponent,
@@ -19,6 +20,7 @@ import {
     declarations: [
         ActivateComponent,
         RegisterComponent,
+        LoginComponent,
         PasswordComponent,
         PasswordStrengthBarComponent,
         PasswordResetInitComponent,
