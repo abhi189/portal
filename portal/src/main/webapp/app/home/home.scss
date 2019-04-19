@@ -50,9 +50,10 @@ Main page styles
 }
 .btnCommon {
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 0.9em;
     padding: 0.6em;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 1px;
     border-radius: 4px;
     outline: none;
     transition: 250ms all ease-in-out;
@@ -60,10 +61,10 @@ Main page styles
     margin: 20px auto;
     background-color: rgba(#85c441, 1);
     border: 1px solid rgba(#85c441, 1);
-    &:hover {
-        font-weight: 600;
-        letter-spacing: 1px;
-    }
+    // &:hover {
+    //     font-weight: 600;
+    //     letter-spacing: 1px;
+    // }
 }
 
 .home-container {
@@ -124,7 +125,7 @@ Main page styles
         .logo {
             &-text {
                 max-width: 275px;
-                margin: 0 auto 0.6em;
+                margin: 0 auto 1em;
                 display: flex;
                 align-items: center;
                 justify-content: center;
