@@ -4,9 +4,9 @@
             <div class="logo col-12 col-sm-12 col-md-8 col-lg-6 col-xl-4">
                 <div class="logo-text">
                     <img src='../../content/images/budderfly-logo-primary-large.png' alt='Portal logo' />
-                    <!-- <h1>Portal</h1> -->
                 </div>
                 <h2>This is where the sample text goes.</h2>
+                <h3>Welcome to Budderfly. Sign In to view all the features.</h3>
             </div>
         </div>
         <div [ngSwitch]="activeForm">
@@ -227,7 +227,7 @@
                                 </small>
                             </div>
                         </div>
-                        <button type="submit" [disabled]="resetRequestForm.form.invalid" class="btn btn-primary" jhiTranslate="reset.request.form.button">Reset</button>
+                        <button type="submit" [disabled]="resetRequestForm.form.invalid" class="reset-btn btn btn-primary" jhiTranslate="reset.request.form.button">Reset</button>
                     </form>
                 </div>
             </div>

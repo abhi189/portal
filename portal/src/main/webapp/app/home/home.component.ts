@@ -29,7 +29,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     errorEmailExists: string;
     errorUserExists: string;
     registerAccount: any;
-    success: boolean;
+    success: any;
     showResetPassword: boolean;
     errorEmailNotExists: string;
     resetAccount: any;
@@ -86,7 +86,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
             .then(() => {
                 this.authenticationError = false;
                 if (this.router.url === '/register' || /^\/activate\//.test(this.router.url) || /^\/reset\//.test(this.router.url)) {
-                    this.router.navigate(['']);
+                    this.router.navigate(['/settings']);
                 }
 
                 this.eventManager.broadcast({
@@ -100,6 +100,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
                 if (redirect) {
                     this.stateStorageService.storeUrl(null);
                     this.router.navigate([redirect]);
+                } else {
+                    this.router.navigate(['/settings']);
                 }
             })
             .catch(() => {
@@ -133,7 +135,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
         this.passwordResetInitService.save(this.resetAccount.email).subscribe(
             () => {
-                this.success = true;
+                this.success = 'OK';
             },
             response => {
                 this.success = null;
