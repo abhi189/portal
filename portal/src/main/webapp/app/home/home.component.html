@@ -12,7 +12,7 @@
                 </div>
                 <div [ngSwitch]="activeForm">
                     <div *ngSwitchCase="'register'" class="register-container row">
-                        <div class="register-container-inner col-sm-12 col-md-8">
+                        <div class="register-container-inner col-sm-12 col-md-10">
                             <div class="register-container-inner-header justify-content-center">
                                 <div class="register-title">
                                     <h3 class="subHeader">Register to explore online pay options</h3>
@@ -138,7 +138,7 @@
                         </div>
                     </div> 
                     <div *ngSwitchCase="'login'" class="login-container row">
-                        <div class="login-container-inner col-12 col-sm-12 col-md-8">
+                        <div class="login-container-inner col-12 col-sm-12 col-md-10">
                             <div class="login-header">
                                 <h3 class="subHeader">Please Sign In to pay your bill online</h3>
                                 <!-- <h4 class="login-title" jhiTranslate="login.title">Sign in</h4> -->
@@ -192,7 +192,7 @@
                         </div>
                     </div>
                     <div *ngSwitchCase="'reset'" class="reset-container row">
-                        <div class="reset-container-inner col-sm-12 col-md-8">
+                        <div class="reset-container-inner col-sm-12 col-md-10">
                             <h3 class="subHeader">Reset your password</h3>
                             <!-- <h1 jhiTranslate="reset.request.title">Reset your password</h1> -->
                             <div class="alert alert-danger" jhiTranslate="reset.request.messages.notfound" *ngIf="errorEmailNotExists">
