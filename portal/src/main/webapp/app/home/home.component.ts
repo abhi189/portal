@@ -147,7 +147,16 @@ export class HomeComponent implements AfterViewInit, OnInit {
     }
 
     openLogin() {
+        const that = this;
+
         this.activeForm = 'login';
+        if (this.timeoutFunc) {
+            clearTimeout(this.timeoutFunc);
+        }
+        this.timeoutFunc = setTimeout(
+            () => that.renderer.invokeElementMethod(that.elementRef.nativeElement.querySelector('#username'), 'focus', []),
+            0
+        );
     }
 
     openRegister() {
