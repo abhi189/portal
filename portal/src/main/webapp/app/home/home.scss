@@ -23,7 +23,6 @@ Main page styles
 }
 
 .formContainer {
-    padding: 2em;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -34,7 +33,6 @@ Main page styles
     flex-direction: column;
     margin: 0 auto;
     background: rgb(255, 255, 255);
-    padding: 2em;
     border-radius: 4px;
 }
 .formTitle {
@@ -44,21 +42,52 @@ Main page styles
     margin-bottom: 15px;
 }
 
+.subHeader {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1em;
+    margin-bottom: 1.5em;
+}
+.btnCommon {
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding: 0.6em;
+    font-weight: 500;
+    border-radius: 4px;
+    outline: none;
+    transition: 300ms all ease-in-out;
+    width: 60%;
+    margin: 20px auto;
+    background-color: #85c441;
+    border: 1px solid #85c441;
+}
+
 .home-container {
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    background-image: url('../../content/images/background-image.jpg');
+    background-image: url('../../content/images/bg-windmill.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Open Sans';
     &-inner {
         padding: 0 2em 2em;
         margin: 0;
         width: 100%;
         height: 100%;
+        > .row {
+            align-items: center;
+            justify-content: center;
+            .container {
+                padding: 0 2em 2em;
+                border-radius: 4px;
+                background: rgba(255, 255, 255, 1);
+                box-shadow: 0 6px 26px 0 rgba(0, 0, 0, 0.09);
+            }
+        }
         .form-control {
             border: 2px solid #ced4da;
             border-radius: 4px;
@@ -69,6 +98,12 @@ Main page styles
             }
             &.ng-invalid:not(form) {
                 // border: 2px solid red;
+            }
+            &::placeholder {
+                opacity: 0.5;
+            }
+            &::-moz-placeholder {
+                opacity: 0.5;
             }
         }
         .form-control:focus {
@@ -82,6 +117,8 @@ Main page styles
         justify-content: center;
         .logo {
             &-text {
+                max-width: 275px;
+                margin: 0 auto;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -94,14 +131,15 @@ Main page styles
             }
             h2 {
                 text-align: center;
-                font-size: 1.5em;
-                font-weight: 500;
-                margin-bottom: 1em;
+                font-size: 1.8em;
+                font-weight: 700;
+                margin-bottom: 0.6em;
+                letter-spacing: 1px;
             }
             h3 {
                 text-align: center;
                 font-size: 1.2em;
-                font-weight: 400;
+                font-weight: 500;
             }
         }
     }
@@ -136,8 +174,11 @@ Main page styles
                         }
                     }
                     .login-btn {
-                        width: 60%;
-                        margin: 20px auto;
+                        @extend .btnCommon;
+                        &:hover {
+                            background-color: #14653b;
+                            border: 1px solid #14653b;
+                        }
                     }
                 }
             }
@@ -182,8 +223,13 @@ Main page styles
                     text-align: left;
                 }
                 .register-btn {
-                    width: 60%;
-                    margin: 20px auto;
+                    @extend .btnCommon;
+                    &:not(.disabled) {
+                        &:hover {
+                            background-color: #14653b;
+                            border: 1px solid #14653b;
+                        }
+                    }
                 }
             }
         }
@@ -237,8 +283,11 @@ Main page styles
             }
         }
         .reset-btn {
-            width: 60%;
-            margin: 20px auto;
+            @extend .btnCommon;
+            &:hover {
+                background-color: #14653b;
+                border: 1px solid #14653b;
+            }
         }
     }
 }

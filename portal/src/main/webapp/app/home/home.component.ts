@@ -12,7 +12,7 @@ import { StateStorageService } from 'app/core/auth/state-storage.service';
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE, EMAIL_NOT_FOUND_TYPE } from 'app/shared';
 
 @Component({
-    selector: 'jhi-login-modal',
+    selector: 'jhi-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.scss']
 })
