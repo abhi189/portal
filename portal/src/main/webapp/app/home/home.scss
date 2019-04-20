@@ -47,6 +47,7 @@ Main page styles
     color: rgba(0, 0, 0, 0.5);
     font-size: 1em;
     margin-bottom: 1.5em;
+    text-align: center;
 }
 .btnCommon {
     text-transform: uppercase;
@@ -124,7 +125,7 @@ Main page styles
         justify-content: center;
         .logo {
             &-text {
-                max-width: 290px;
+                max-width: 325px;
                 margin: 0 auto 1.5em;
                 display: flex;
                 align-items: center;
@@ -138,8 +139,8 @@ Main page styles
             h2 {
                 text-align: center;
                 font-size: 1.7em;
-                font-weight: 600;
-                margin-bottom: 0.6em;
+                font-weight: 700;
+                margin-bottom: 0.8em;
             }
             h3 {
                 text-align: center;
@@ -188,6 +189,7 @@ Main page styles
                 @extend .formTitle;
             }
             &-footer {
+                font-family: 'Open Sans';
                 text-align: center;
                 span {
                     &:first-child {
@@ -236,6 +238,7 @@ Main page styles
             }
             &-footer {
                 text-align: center;
+                font-family: 'Open Sans';
                 span {
                     &:first-child {
                         color: rgba(0, 0, 0, 0.75);
