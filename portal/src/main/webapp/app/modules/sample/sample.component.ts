@@ -16,11 +16,11 @@ export class SampleComponent {
         if (this.accountService.isAuthenticated()) {
             this.authServerProvider.logout().subscribe(() => {
                 this.accountService.authenticate(null);
-                this.router.navigate(['sample']);
+                this.router.navigate(['']);
             });
         } else {
             this.accountService.authenticate(null);
-            this.router.navigate(['sample']);
+            this.router.navigate(['']);
         }
     }
 }
