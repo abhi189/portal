@@ -1,10 +1,6 @@
 {
     "home": {
-<<<<<<< HEAD:src/main/webapp/i18n/en/home.json
         "title": "Budderfly - Home",
-=======
-        "title": "Budderfly Home",
->>>>>>> master:src/main/webapp/i18n/en/home.json
         "subtitle": "This is your homepage",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
