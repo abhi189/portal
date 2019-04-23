@@ -33,7 +33,7 @@ Main page styles
     flex-direction: column;
     margin: 0 auto;
     background: rgb(255, 255, 255);
-    border-radius: 4px;
+    border-radius: 20px;
     transition: 250ms all ease-in-out;
 }
 .formTitle {
@@ -88,7 +88,7 @@ Main page styles
             justify-content: center;
             .container {
                 padding: 2em;
-                border-radius: 4px;
+                border-radius: 20px;
                 background: rgba(255, 255, 255, 1);
                 box-shadow: 0 6px 26px 0 rgba(0, 0, 0, 0.09);
             }
@@ -96,7 +96,7 @@ Main page styles
         .form-control-label {
             small {
                 color: red;
-                margin-left: 5px
+                margin-left: 5px;
             }
         }
         .form-control {
@@ -108,7 +108,7 @@ Main page styles
                 border: 1px solid #85c441;
             }
             &.ng-invalid:not(form) {
-                 border: 1px solid red;
+                border: 1px solid red;
             }
             &::placeholder {
                 opacity: 0.5;
