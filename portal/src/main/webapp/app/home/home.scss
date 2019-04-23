@@ -33,7 +33,7 @@ Main page styles
     flex-direction: column;
     margin: 0 auto;
     background: rgb(255, 255, 255);
-    border-radius: 4px;
+    border-radius: 20px;
     transition: 250ms all ease-in-out;
 }
 .formTitle {
@@ -47,7 +47,6 @@ Main page styles
     color: rgba(0, 0, 0, 0.5);
     font-size: 1em;
     margin-bottom: 1.5em;
-    text-align: center;
 }
 .btnCommon {
     text-transform: uppercase;
@@ -72,13 +71,13 @@ Main page styles
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    background-image: url('../../content/images/bg-windmill.jpg');
+    background-image: url('../../content/images/windmills-sunset.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     &-inner {
         padding: 0 2em;
         margin: 0;
@@ -89,9 +88,15 @@ Main page styles
             justify-content: center;
             .container {
                 padding: 2em;
-                border-radius: 4px;
+                border-radius: 20px;
                 background: rgba(255, 255, 255, 1);
                 box-shadow: 0 6px 26px 0 rgba(0, 0, 0, 0.09);
+            }
+        }
+        .form-control-label {
+            small {
+                color: red;
+                margin-left: 5px;
             }
         }
         .form-control {
@@ -103,7 +108,7 @@ Main page styles
                 border: 1px solid #85c441;
             }
             &.ng-invalid:not(form) {
-                // border: 2px solid red;
+                border: 1px solid red;
             }
             &::placeholder {
                 opacity: 0.5;
@@ -140,12 +145,12 @@ Main page styles
                 text-align: center;
                 font-size: 1.7em;
                 font-weight: 700;
-                margin-bottom: 0.8em;
+                margin-bottom: 0.6em;
             }
             h3 {
                 text-align: center;
                 font-size: 1.2em;
-                font-weight: 500;
+                font-weight: 600;
             }
         }
     }
@@ -189,7 +194,6 @@ Main page styles
                 @extend .formTitle;
             }
             &-footer {
-                font-family: 'Open Sans';
                 text-align: center;
                 span {
                     &:first-child {
@@ -238,7 +242,6 @@ Main page styles
             }
             &-footer {
                 text-align: center;
-                font-family: 'Open Sans';
                 span {
                     &:first-child {
                         color: rgba(0, 0, 0, 0.75);
