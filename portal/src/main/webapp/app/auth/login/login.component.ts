@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Renderer, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, Renderer, ElementRef, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { JhiEventManager } from 'ng-jhipster';
 
@@ -6,11 +6,13 @@ import { LoginService } from 'app/core/login/login.service';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 
 @Component({
-    selector: 'jhi-login-modal',
+    selector: 'jhi-login-component',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements AfterViewInit {
+    @Output() gotToRegister = new EventEmitter();
+    @Output() goToForgot = new EventEmitter();
     authenticationError: boolean;
     password: string;
     rememberMe: boolean;
@@ -72,11 +74,11 @@ export class LoginComponent implements AfterViewInit {
             });
     }
 
-    register() {
-        this.router.navigate(['/register']);
+    openRegister() {
+        this.gotToRegister.next('register');
     }
 
-    requestResetPassword() {
-        this.router.navigate(['/reset', 'request']);
+    openResetPassword() {
+        this.goToForgot.next('reset');
     }
 }

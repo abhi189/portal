@@ -1,7 +1,7 @@
 <div class="login-container row">
-    <div class="login-container-inner col-lg-4 col-md-6 col-sm-12">
+    <div class="login-container-inner col-12 col-sm-12 col-md-10">
         <div class="login-header">
-            <h4 class="login-title" jhiTranslate="login.title">Sign in</h4>
+            <h3 class="subHeader">Please Sign In to pay your bill online</h3>
         </div>
         <div class="login-body">
             <div class="login-body-inner justify-content-center">
@@ -29,23 +29,16 @@
                                     <span jhiTranslate="login.form.rememberme">Remember me</span>
                                 </label>
                             </div>
-                            <div class="forgot-password" (click)="requestResetPassword()">Forgot Password?</div>
+                            <div class="forgot-password" (click)="openResetPassword()">Forgot Password?</div>
                         </div>
                         <button type="submit" class="btn btn-primary login-btn" jhiTranslate="login.form.button">Sign in</button>
                     </form>
                     <div class="login-footer">
                         <div class="register-new">
                             <span>Don't have an account?</span>
-                            <span (click)="register()"> Register</span>
+                            <span (click)="openRegister()"> Register</span>
                         </div>
                     </div>
-                    <!-- <div class="alert alert-warning">
-                        <a class="alert-link" (click)="requestResetPassword()" jhiTranslate="login.password.forgot">Did you forget your password?</a>
-                    </div>
-                    <div class="alert alert-warning">
-                        <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>
-                        <a class="alert-link" (click)="register()" jhiTranslate="global.messages.info.register.link">Register a new account</a>
-                    </div> -->
                 </div>
             </div>
         </div>
