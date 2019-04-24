@@ -46,6 +46,26 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         }, 0);
     }
 
+    // register() {
+    //     if (this.registerAccount.password !== this.confirmPassword) {
+    //         this.doNotMatch = 'ERROR';
+    //     } else {
+    //         this.doNotMatch = null;
+    //         this.error = null;
+    //         this.errorUserExists = null;
+    //         this.errorEmailExists = null;
+    //         this.languageService.getCurrent().then(key => {
+    //             this.registerAccount.langKey = key;
+    //             this.registerService.save(this.registerAccount).subscribe(
+    //                 () => {
+    //                     this.success = true;
+    //                 },
+    //                 response => this.processError(response)
+    //             );
+    //         });
+    //     }
+    // }
+
     register() {
         if (this.registerAccount.password !== this.confirmPassword) {
             this.doNotMatch = 'ERROR';
@@ -56,7 +76,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             this.errorEmailExists = null;
             this.languageService.getCurrent().then(key => {
                 this.registerAccount.langKey = key;
-                this.registerService.save(this.registerAccount).subscribe(
+                this.registerService.mockSave(this.registerAccount).subscribe(
                     () => {
                         this.success = true;
                     },

@@ -1,0 +1,106 @@
+.bank-info {
+    &-container {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        &-inner {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
+            max-width: 964px;
+            margin: 0 auto;
+        }
+    }
+    &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            max-width: 300px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 20px;
+            line-height: 22px;
+            font-weight: 700;
+            color: #142031;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+    &-body {
+        padding: 35px 20px;
+        border-radius: 4px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 6px 19px 0px rgba(0, 0, 0, 0.09);
+        .no-margin {
+            margin: 0;
+        }
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            height: 2.5rem;
+            &.ng-valid[required],
+            &.ng-valid.required {
+                border: 1px solid #85c441;
+            }
+            &.ng-invalid:not(form) {
+                // border: 2px solid red;
+            }
+            &::placeholder {
+                opacity: 0.5;
+                font-weight: 400;
+            }
+            &::-moz-placeholder {
+                opacity: 0.5;
+                font-weight: 400;
+            }
+        }
+        .form-control:focus {
+            border: 1px solid #14653b;
+            box-shadow: none;
+        }
+        .form-control-label {
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+    }
+    &-footer {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        .bank-info-btn {
+            text-transform: uppercase;
+            font-size: 0.8em;
+            padding: 0.6em 1.5em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            outline: none;
+            transition: 250ms all ease-in-out;
+            cursor: pointer;
+            &.submit {
+                color: #fff;
+                background-color: #85c441;
+                border: 1px solid #85c441;
+                margin-right: 20px;
+            }
+            &.reset {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
