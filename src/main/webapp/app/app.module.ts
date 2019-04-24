@@ -13,7 +13,9 @@ import { NotificationInterceptor } from './blocks/interceptor/notification.inter
 import { PortalSharedModule } from 'app/shared';
 import { PortalCoreModule } from 'app/core';
 import { PortalAppRoutingModule } from './app-routing.module';
+import { PortalAuthModule } from './auth/auth.module';
 import { PortalHomeModule } from './home/home.module';
+import { ModulesModule } from './modules/modules.module';
 import { PortalAccountModule } from './account/account.module';
 import { PortalEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
@@ -36,6 +38,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         PortalCoreModule,
         PortalHomeModule,
         PortalAccountModule,
+        ModulesModule,
+        PortalAuthModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         PortalEntityModule
     ],
