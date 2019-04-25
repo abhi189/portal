@@ -15,6 +15,26 @@
             max-width: 964px;
             margin: 0 auto;
         }
+        .logout {
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            button {
+                padding: 0.6em 1.5em;
+                color: #fff;
+                font-weight: 600;
+                text-transform: uppercase;
+                border-radius: 4px;
+                font-size: 0.8em;
+                background-color: #85c441;
+                border: 1px solid #85c441;
+                cursor: pointer;
+                transition: 25ms all ease-in-out;
+                &:hover {
+                    background-color: #85c441;
+                }
+            }
+        }
     }
     &-header {
         display: flex;

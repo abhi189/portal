@@ -22,4 +22,16 @@ export class BankInfoComponent implements OnInit {
     onChangeState(state: string) {
         this.bankInfo.state = state;
     }
+
+    logout() {
+        if (this.accountService.isAuthenticated()) {
+            this.authServerProvider.logout().subscribe(() => {
+                this.accountService.authenticate(null);
+                this.router.navigate(['']);
+            });
+        } else {
+            this.accountService.authenticate(null);
+            this.router.navigate(['']);
+        }
+    }
 }
