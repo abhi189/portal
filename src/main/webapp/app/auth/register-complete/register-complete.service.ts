@@ -17,7 +17,7 @@ export class RegisterCompleteService {
     }
 
     validateToken(token: string) {
-        return this.http.post(SERVER_API_URL + 'authenticate/api/register/token', token);
+        return this.http.post(SERVER_API_URL + 'authenticate/api/register/token/' + token, { withCredentials: true });
     }
 
     save(account: any): Observable<any> {
