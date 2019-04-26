@@ -32,6 +32,7 @@ Main page styles
     align-items: center;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
+    transition: 500ms all ease-in-out;
     &-inner {
         padding: 0 2em;
         margin: 0;
@@ -40,14 +41,16 @@ Main page styles
         > .row {
             align-items: center;
             justify-content: center;
+            transition: 1s all ease-in-out;
             .container {
                 padding: 2em;
                 border-radius: 25px;
                 background: rgba(255, 255, 255, 1);
                 box-shadow: 0 6px 26px 0 rgba(0, 0, 0, 0.09);
+                transition: 1s all ease-in-out;
             }
         }
-        
+
         .form-control {
             border: 1px solid #ced4da;
             border-radius: 4px;
@@ -55,9 +58,6 @@ Main page styles
             &.ng-valid[required],
             &.ng-valid.required {
                 border: 1px solid #85c441;
-            }
-            &.ng-invalid:not(form) {
-                // border: 2px solid red;
             }
             &::placeholder {
                 opacity: 0.5;
