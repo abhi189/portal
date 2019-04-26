@@ -43,7 +43,7 @@
         justify-content: space-between;
         .logo {
             max-width: 300px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         h1 {
             font-size: 20px;
@@ -95,6 +95,14 @@
             text-transform: uppercase;
             margin-bottom: 10px;
         }
+        .site-address {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.75);
+        }
+        .routing-image {
+            margin-top: 10px;
+        }
     }
     &-footer {
         display: flex;
@@ -111,14 +119,18 @@
             border-radius: 4px;
             outline: none;
             transition: 250ms all ease-in-out;
-            cursor: pointer;
             &.submit {
                 color: #fff;
                 background-color: #85c441;
                 border: 1px solid #85c441;
                 margin-right: 20px;
+                &.enabled {
+                    opacity: 1;
+                    cursor: pointer;
+                }
             }
             &.reset {
+                cursor: pointer;
                 color: rgba(0, 0, 0, 0.5);
             }
         }
