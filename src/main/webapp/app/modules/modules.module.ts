@@ -7,7 +7,7 @@ import { ModulesRoutes } from './modules.route';
 @NgModule({
     imports: [PortalSharedModule, RouterModule.forChild(ModulesRoutes)],
     declarations: [BankInfoComponent],
-    exports: [],
+    exports: [BankInfoComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ModulesModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { BankingInfo } from './bank-info.service';
 import { AccountService } from '../../core/auth/account.service';
@@ -18,6 +18,7 @@ export class BankInfoComponent implements OnInit {
     public storeError: string;
     public bankDataError: string;
     private searchStore: Subject<string> = new Subject();
+    @Input() showLogout: boolean;
 
     constructor(
         private accountService: AccountService,

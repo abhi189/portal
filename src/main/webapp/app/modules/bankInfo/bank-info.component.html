@@ -1,5 +1,5 @@
 <section class="bank-info-container">
-    <div class="logout">
+    <div *ngIf="showLogout" class="logout">
         <button (click)="logout()">Logout</button>
     </div>
     <div class="bank-info-container-inner">
