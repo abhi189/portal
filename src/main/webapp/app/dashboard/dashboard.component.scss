@@ -25,9 +25,9 @@
     .dashboard-content {
         transition: 500ms all ease-in;
         width: calc(100% - 250px);
-        margin-left: 250px;
         min-height: 100vh;
         padding: 40px;
+        transform: translateX(250px);
         &-inner {
             background: #fff;
             border-radius: 5px;
@@ -40,12 +40,12 @@
     }
     &.collapsed {
         .dashboard-sidebar {
-            width: 0px;
-            // transform: translateX(-100%);
+            transform: translateX(-100%);
         }
         .dashboard-content {
             width: calc(100% - 0px);
             margin-left: 0px;
+            transform: translateX(0%);
         }
     }
 }
