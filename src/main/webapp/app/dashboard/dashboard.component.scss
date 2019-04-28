@@ -58,6 +58,14 @@
         margin-bottom: 20px;
         &-list {
             margin: 0;
+            list-style-type: none;
+            &-item {
+                display: inline-block;
+                margin-right: 10px;
+                &:last-child {
+                    margin: 0;
+                }
+            }
         }
     }
 }

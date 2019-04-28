@@ -9,13 +9,17 @@
         <div class="dashboard-content">
             <div class="breadcrumbs">
                 <ol class="breadcrumbs-list">
-                    <li>
+                    <li class="breadcrumbs-list-item">
                         <a 
                             [routerLink]='[""]' 
                             routerLinkActive='active'
                         >Home</a>
                     </li>
-                    <li *ngFor='let breadcrumb of breadcrumbs'>
+                    <li 
+                        *ngFor='let breadcrumb of breadcrumbs'
+                        class="breadcrumbs-list-item"
+                        [ngClass]="{active: breadcrumb.label === 'active'}"
+                    >
                         <a 
                             [routerLink]='[breadcrumb.url, breadcrumb.params]' 
                             routerLinkActive='active'
