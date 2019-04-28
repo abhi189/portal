@@ -3,9 +3,9 @@
         <button (click)="logout()">Logout</button>
     </div>
     <div class="bank-info-container-inner">
-        <div class="bank-info-body">
+        <div class="bank-info-body" [ngClass]="{boxModel : showBoxLayout}">
             <div class="bank-info-header">
-                <div class="logo">
+                <div *ngIf="showLogo" class="logo">
                     <img src='../../../content/images/budderfly-logo-primary-large.png' alt='subway' />
                 </div>
                 <h1>Please complete the information below to securely provide your banking information.</h1>

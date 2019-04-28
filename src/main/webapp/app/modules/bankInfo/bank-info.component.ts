@@ -19,6 +19,8 @@ export class BankInfoComponent implements OnInit {
     public bankDataError: string;
     private searchStore: Subject<string> = new Subject();
     @Input() showLogout: boolean;
+    @Input() showLogo: boolean;
+    @Input() showBoxLayout: boolean;
 
     constructor(
         private accountService: AccountService,

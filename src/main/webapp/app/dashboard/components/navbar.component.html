@@ -10,12 +10,11 @@
                 <fa-icon icon="bars" fixedWidth="true" class="icon"></fa-icon>
             </div>
         </div>
-        <div class="nav-center center">
-            <h2>Payments Dashboard</h2>
-        </div>
         <div class="nav-right rhs">
             <div class="user-details" (click)=toggleUserDropDown()>
-                <div class="user-img"><img src="" /></div>
+                <div class="user-img">
+                    <fa-icon icon="users"></fa-icon>
+                </div>
                 <div class="user-name">Sample</div>
                 <div class="user-details-dropdown" [ngClass]="{visible: showUserDetails}">
                     <ul>

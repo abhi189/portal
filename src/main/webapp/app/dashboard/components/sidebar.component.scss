@@ -1,11 +1,14 @@
 .sidebar-container {
     width: 100%;
     height: 100%;
-    background: rgba($color: #000000, $alpha: 0.8);
+    background: rgba($color: #14653b, $alpha: 1);
     h5 {
         text-align: center;
-        padding: 10px;
-        font-size: 14px;
+        padding: 20px;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        background: rgba($color: #000000, $alpha: 0.8);
         font-weight: 500;
         color: #fff;
     }
