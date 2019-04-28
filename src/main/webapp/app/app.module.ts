@@ -16,6 +16,7 @@ import { PortalAppRoutingModule } from './app-routing.module';
 import { PortalAuthModule } from './auth/auth.module';
 import { PortalHomeModule } from './home/home.module';
 import { ModulesModule } from './modules/modules.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { PortalAccountModule } from './account/account.module';
 import { PortalEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
@@ -39,6 +40,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         PortalHomeModule,
         PortalAccountModule,
         ModulesModule,
+        DashboardModule,
         PortalAuthModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         PortalEntityModule

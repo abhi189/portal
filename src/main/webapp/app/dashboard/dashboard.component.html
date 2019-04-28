@@ -1,0 +1,13 @@
+<main class="dashboard-container">
+    <jhi-dashboard-navbar
+        (toggleSideBar)="handleToggleSideBar()"
+    ></jhi-dashboard-navbar>
+    <section class="dashboard-content-container" [ngClass]="{collapsed: !sideBarVisible}">
+        <aside class="dashboard-sidebar">
+            <jhi-dashboard-sidebar></jhi-dashboard-sidebar>
+        </aside>
+        <div class="dashboard-content">
+            <h1>Wlcome to Budderfly Dashboard</h1>
+        </div>
+    </section>
+</main>

@@ -5,10 +5,10 @@ import { UserRouteAccessService } from 'app/core';
 export const ModulesRoutes: Routes = [
     {
         path: 'bank-info',
-        data: {
-            authorities: ['ROLE_ADMIN', 'ROLE_USER'],
-            pageTitle: 'bankInfo.title'
-        },
+        // data: {
+        //     authorities: ['ROLE_ADMIN', 'ROLE_USER'],
+        //     pageTitle: 'bankInfo.title'
+        // },
         canActivate: [UserRouteAccessService],
         component: BankInfoComponent
     }
