@@ -53,6 +53,14 @@
                     height: 40px;
                     border-radius: 50%;
                     background: #fff;
+                    display: flex;
+                    border: 1px solid grey;
+                    align-items: center;
+                    justify-content: center;
+                    .icon {
+                        font-size: 30px;
+                        color: rgba(0, 0, 0, 0.6);
+                    }
                 }
                 .user-name {
                     margin-left: -40px;
@@ -112,7 +120,7 @@
             }
         }
         &-brand {
-            width: 120px;
+            width: 200px;
             height: 30px;
             padding: 0;
         }

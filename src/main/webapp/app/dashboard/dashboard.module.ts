@@ -3,13 +3,21 @@ import { RouterModule } from '@angular/router';
 import { PortalSharedModule } from 'app/shared';
 import { ModulesModule } from '../modules/modules.module';
 import { DashboardComponent } from './dashboard.component';
-import { DashboardNavbarComponent } from './components/navbar.component';
-import { DashboardSidebarComponent } from './components/sidebar.component';
+import { DashboardNavbarComponent } from './components/navbar/navbar.component';
+import { DashboardSidebarComponent } from './components/sidebar/sidebar.component';
+import { DashboardPaymentsComponent } from './components/payments/payments.component';
+import { DashboardInvoiceComponent } from './components/invoices/invoice.component';
 import { DashboardRoutes } from './dashboard.route';
 
 @NgModule({
     imports: [PortalSharedModule, ModulesModule, RouterModule.forChild(DashboardRoutes)],
-    declarations: [DashboardNavbarComponent, DashboardSidebarComponent, DashboardComponent],
+    declarations: [
+        DashboardNavbarComponent,
+        DashboardSidebarComponent,
+        DashboardPaymentsComponent,
+        DashboardInvoiceComponent,
+        DashboardComponent
+    ],
     exports: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

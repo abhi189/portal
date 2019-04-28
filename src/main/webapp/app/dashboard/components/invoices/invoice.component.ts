@@ -1,15 +1,15 @@
 import { Component, EventEmitter, AfterViewInit, Output, OnInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AccountService } from '../../core/auth/account.service';
-import { AuthServerProvider } from '../../core/auth/auth-jwt.service';
+import { AccountService } from '../../../core/auth/account.service';
+import { AuthServerProvider } from '../../../core/auth/auth-jwt.service';
 
 @Component({
-    selector: 'jhi-dashboard-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss']
+    selector: 'jhi-dashboard-invoice',
+    templateUrl: './invoice.component.html',
+    styleUrls: ['./invoice.component.scss']
 })
-export class DashboardNavbarComponent implements OnInit, AfterViewInit {
+export class DashboardInvoiceComponent implements OnInit, AfterViewInit {
     @Output() toggleSideBar = new EventEmitter();
     public showUserDetails: boolean;
     constructor(

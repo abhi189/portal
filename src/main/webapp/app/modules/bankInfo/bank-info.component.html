@@ -1,9 +1,9 @@
-<section class="bank-info-container">
+<section class="bank-info-container" [ngClass]="{boxModel : showBoxLayout}">
     <div *ngIf="showLogout" class="logout">
         <button (click)="logout()">Logout</button>
     </div>
     <div class="bank-info-container-inner">
-        <div class="bank-info-body" [ngClass]="{boxModel : showBoxLayout}">
+        <div class="bank-info-body">
             <div class="bank-info-header">
                 <div *ngIf="showLogo" class="logo">
                     <img src='../../../content/images/budderfly-logo-primary-large.png' alt='subway' />
