@@ -7,21 +7,21 @@
             <jhi-dashboard-sidebar></jhi-dashboard-sidebar>
         </aside>
         <div class="dashboard-content">
-            <div class="breadcrumbs">
+            <div *ngIf="breadcrumbs && breadcrumbs.length" class="breadcrumbs">
                 <ol class="breadcrumbs-list">
                     <li class="breadcrumbs-list-item">
                         <a 
                             [routerLink]='[""]' 
+                            [routerLinkActiveOptions]="{exact: true}"
                             routerLinkActive='active'
                         >Home</a>
                     </li>
                     <li 
                         *ngFor='let breadcrumb of breadcrumbs'
                         class="breadcrumbs-list-item"
-                        [ngClass]="{active: breadcrumb.label === 'active'}"
                     >
                         <a 
-                            [routerLink]='[breadcrumb.url, breadcrumb.params]' 
+                            [routerLink]='[breadcrumb.url]' 
                             routerLinkActive='active'
                         >{{ breadcrumb.label }}</a>
                     </li>

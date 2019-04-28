@@ -9,7 +9,9 @@ export const DashboardRoutes: Routes = [
     {
         path: 'dashboard',
         data: {
-            breadcrumb: 'dashboard'
+            breadcrumb: 'dashboard',
+            label: 'Dashboard',
+            url: 'dashboard'
         },
         // data: {
         //     authorities: ['ROLE_ADMIN', 'ROLE_USER'],
@@ -21,14 +23,18 @@ export const DashboardRoutes: Routes = [
             {
                 path: 'payments',
                 data: {
-                    breadcrumb: 'payments'
+                    breadcrumb: 'payments',
+                    label: 'Payments',
+                    url: 'payments'
                 },
                 component: DashboardPaymentsComponent
             },
             {
                 path: 'invoices',
                 data: {
-                    breadcrumb: 'invoice'
+                    breadcrumb: 'invoice',
+                    label: 'Invoices',
+                    url: 'invoices'
                 },
                 component: DashboardInvoiceComponent
             }

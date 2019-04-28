@@ -59,11 +59,46 @@
         &-list {
             margin: 0;
             list-style-type: none;
+            padding: 0;
             &-item {
                 display: inline-block;
                 margin-right: 10px;
+                position: relative;
                 &:last-child {
                     margin: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+                &::after {
+                    content: '>';
+                    display: block;
+                    position: absolute;
+                    width: 10px;
+                    font-weight: 500;
+                    height: 10px;
+                    right: -10px;
+                    color: rgba(0, 0, 0, 0.5);
+                    top: 0px;
+                }
+                &:not(:first-child) {
+                    a {
+                        padding-left: 5px;
+                    }
+                }
+                a {
+                    color: #20a8d8;
+                    text-decoration: none;
+                    font-weight: 400;
+                    background-color: transparent;
+                    padding-right: 5px;
+                    &:hover {
+                        color: #007bff;
+                    }
+                    &.active {
+                        pointer-events: none;
+                        color: rgba(0, 0, 0, 0.5);
+                    }
                 }
             }
         }

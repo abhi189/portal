@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd, PRIMARY_OUTLET, RoutesRecognized } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd, Event, PRIMARY_OUTLET, RoutesRecognized, ActivationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { map, mergeMap } from 'rxjs/internal/operators';
+import { map, mergeMap, buffer, pluck } from 'rxjs/internal/operators';
+import { Observable, of } from 'rxjs';
 
 @Component({
     selector: 'jhi-dashboard',
@@ -10,7 +11,8 @@ import { map, mergeMap } from 'rxjs/internal/operators';
 })
 export class DashboardComponent implements OnInit {
     public sideBarVisible: boolean;
-    public breadcrumbs: Array<object>;
+    // public breadcrumbs$: Observable<any>;
+    public breadcrumbs: Array<any> = [];
 
     constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -20,29 +22,22 @@ export class DashboardComponent implements OnInit {
     }
 
     setBreadCrumbs(): void {
+        const navigationEnd$ = this.router.events.pipe(filter(event => event instanceof NavigationEnd));
+
+        // this.breadcrumbs$ = of([1, 2, 3, 4, 5]);
         this.router.events
-            .pipe(filter(event => event instanceof NavigationEnd))
-            .pipe(map(() => this.activatedRoute))
             .pipe(
-                map(route => {
-                    while (route.firstChild) {
-                        route = route.firstChild;
-                    }
-                    return route;
-                })
+                filter(ev => ev instanceof ActivationEnd),
+                pluck('snapshot'),
+                pluck('data'),
+                buffer(navigationEnd$),
+                map((bcData: any[]) => bcData.reverse())
             )
-            .pipe(filter(route => route.outlet === PRIMARY_OUTLET))
-            .subscribe(route => {
-                this.breadcrumbs = [];
-                const snapshot = this.router.routerState.snapshot;
-                const url = snapshot.url;
-                const routeData = route.snapshot.data;
+            .subscribe(breadcrumbsArr => {
+                let breadcrumbs = breadcrumbsArr;
 
-                console.log(routeData);
-                const label = routeData['breadcrumb'];
-                const params = snapshot.root.params;
-
-                this.breadcrumbs.push({ url, label, params });
+                breadcrumbs = breadcrumbs.filter(breadcrumb => Object.keys(breadcrumb) && Object.keys(breadcrumb).length);
+                this.breadcrumbs = breadcrumbs;
             });
     }
 
