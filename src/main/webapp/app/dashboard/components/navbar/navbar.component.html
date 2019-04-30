@@ -1,13 +1,16 @@
 <nav class="dashboard-navbar">
     <div class="navbar">
         <div class="nav-left lhs">
-            <div class="navbar-brand">
+            <div class="navbar-brand hidden-sm">
                 <a href='/'>
                     <img src='../../../../content/images/budderfly-logo-primary-large.png' alt='budderfly' />
                 </a>
             </div>
             <div class="action" (click)=toggleSidebar()>
                 <fa-icon icon="bars" fixedWidth="true" class="icon"></fa-icon>
+            </div>
+            <div class="navbar-brand-mobile visible-sm">
+                <img src="../../../../content/images/logo-mobile-img.png" alt="budderfly" />
             </div>
         </div>
         <div class="nav-right rhs">

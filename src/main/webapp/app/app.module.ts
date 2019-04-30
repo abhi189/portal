@@ -21,12 +21,19 @@ import { PortalAccountModule } from './account/account.module';
 import { PortalEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import {
+    JhiMainComponent,
+    NavbarComponent,
+    Four04Component,
+    FooterComponent,
+    PageRibbonComponent,
+    ActiveMenuDirective,
+    ErrorComponent
+} from './layouts';
 
 @NgModule({
     imports: [
         BrowserModule,
-        PortalAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
@@ -43,9 +50,18 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         DashboardModule,
         PortalAuthModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        PortalEntityModule
+        PortalEntityModule,
+        PortalAppRoutingModule
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        ActiveMenuDirective,
+        FooterComponent,
+        Four04Component
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

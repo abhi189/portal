@@ -20,7 +20,6 @@
         .lhs {
             display: flex;
             align-items: center;
-            width: 210px;
             justify-content: space-around;
             .action {
                 cursor: pointer;
@@ -123,6 +122,23 @@
             width: 200px;
             height: 30px;
             padding: 0;
+            &-mobile {
+                display: none;
+            }
+            @media only screen and (max-width: 420px) {
+                &-mobile {
+                    display: block;
+                    margin-left: 10px;
+                    max-width: 30px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+            padding: 0 10px;
+            &-brand {
+                display: none;
+            }
         }
     }
 }

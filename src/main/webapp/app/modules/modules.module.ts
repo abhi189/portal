@@ -5,7 +5,7 @@ import { BankInfoComponent } from './bankInfo/bank-info.component';
 import { ModulesRoutes } from './modules.route';
 
 @NgModule({
-    imports: [PortalSharedModule, RouterModule.forChild(ModulesRoutes)],
+    imports: [PortalSharedModule],
     declarations: [BankInfoComponent],
     exports: [BankInfoComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

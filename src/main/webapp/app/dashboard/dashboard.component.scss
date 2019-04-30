@@ -21,6 +21,7 @@
         background: #fff;
         border-right: 1px solid #ddd;
         transform: translateX(0%);
+        z-index: 9;
     }
     .dashboard-content {
         transition: 500ms all ease-in;
@@ -37,6 +38,12 @@
                 text-align: center;
             }
         }
+        @media only screen and (max-width: 420px) {
+            padding: 10px;
+            &-inner {
+                padding: 20px 10px;
+            }
+        }
     }
     &.collapsed {
         .dashboard-sidebar {
@@ -48,14 +55,29 @@
             transform: translateX(0%);
         }
     }
+    @media only screen and (max-width: 420px) {
+        .dashboard-sidebar {
+            height: calc(100vh);
+            transform: translateX(-100%);
+        }
+        .dashboard-content {
+            width: calc(100%);
+            transform: translateX(0px);
+        }
+        &.collapsed {
+            transform: translateX(0%);
+            .dashboard-sidebar {
+                transform: translateX(0%);
+            }
+            .dashboard-content {
+                width: calc(100% - 0px);
+            }
+        }
+    }
     .breadcrumbs {
-        border: 1px solid #ccc;
         list-style: none;
-        border-radius: 5px;
-        padding: 5px;
-        padding: 5px 20px;
+        padding: 10px 20px;
         background: #fff;
-        margin-bottom: 20px;
         &-list {
             margin: 0;
             list-style-type: none;

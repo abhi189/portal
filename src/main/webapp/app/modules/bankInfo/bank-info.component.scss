@@ -101,6 +101,9 @@
         .routing-image {
             margin-top: 10px;
         }
+        @media screen and (max-width: 420px) {
+            padding: 20px 10px;
+        }
     }
     &.boxModel {
         &-inner {
