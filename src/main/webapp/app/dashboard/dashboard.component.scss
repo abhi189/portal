@@ -12,7 +12,7 @@
     height: calc(100vh - 60px);
     margin-top: 60px;
     .dashboard-sidebar {
-        width: 250px;
+        width: 200px;
         position: fixed;
         left: 0;
         transition: 0.3s all ease-in;
@@ -25,12 +25,12 @@
     }
     .dashboard-content {
         transition: 0.3s all ease-in;
-        width: calc(100% - 250px);
+        width: calc(100% - 200px);
         height: 100%;
-        transform: translateX(250px);
+        transform: translateX(200px);
         &-inner {
             border-radius: 5px;
-            padding: 20px;
+            padding: 0px 20px;
             h3 {
                 text-align: center;
             }

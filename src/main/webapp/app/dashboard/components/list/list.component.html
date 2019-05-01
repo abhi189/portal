@@ -1,16 +1,41 @@
-<section>
+<section class="stores-list-container">
     <h1>Stores</h1>
     <div *ngIf="!storeList$ | async">
         loading...
     </div>
     <div *ngIf="storeList$ | async" class="stores-list">
-        <jhi-store-list-item 
-            *ngFor="let store of storeList$ | async"
-            [store]="store"
-            (onStoreClick)="handleStoreClick($event)"
-            [storesSelected]="storesSelected"
-        >
-        </jhi-store-list-item>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+            <tbody>
+                <tr>
+                    <th class="text-center">S.No.</th>
+                    <th class="text-center">Store Id</th>
+                    <th class="text-center">Address</th>
+                    <th class="text-center">City</th>
+                    <th class="text-center">Zipcode</th>
+                    <th class="text-center">Autopay(EFT)</th>
+                </tr>
+                <tr *ngFor="let store of storeList$ | async ; let i = index"
+                    class="store-item-row" 
+                >
+                    <td>{{i + 1}}</td>
+                    <td>{{store.id}}</td>
+                    <td>{{store.address}}</td>
+                    <td>{{store.city}}</td>
+                    <td>{{store.zipCode}}</td>
+                    <td class="action">
+                        <label htmlFor="action">
+                            <input type="checkbox"
+                                [checked]="store.autoPayEnabled" 
+                                id="action" 
+                                (change)="handlePaymentChange($event,store)" 
+                            />
+                            <span *ngIf="store.autoPayEnabled" class="disable">Disable</span>
+                            <span *ngIf="!store.autoPayEnabled" class="enable">Enable</span>
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="action-bar" [ngClass]="{visible: storesSelected.length}">
         <button class="btn" (click)="payByETF()">Pay By etf</button>

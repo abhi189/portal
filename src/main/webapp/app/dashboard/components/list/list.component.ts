@@ -14,13 +14,6 @@ export class DashboardListComponent implements OnInit {
 
     constructor(private dashboard: Dashboard) {
         this.storeList$ = this.dashboard.getStores();
-        // .subscribe(
-        //     res => {
-        //         console.log(res);
-        //         this.storeList
-        //     }
-        //     err => console.log(err)
-        // );
     }
 
     ngOnInit() {
@@ -37,6 +30,10 @@ export class DashboardListComponent implements OnInit {
         }
         this.storesSelected = [...this.storesSelected, store];
         this.setStoreSelected(store);
+    }
+
+    handlePaymentChange(event, store) {
+        console.log(event, store);
     }
 
     setStoreSelected(store): boolean {

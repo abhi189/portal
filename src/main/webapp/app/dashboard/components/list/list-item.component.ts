@@ -7,6 +7,7 @@ import { Component, Input, EventEmitter, Output, OnChanges, SimpleChanges, Chang
 })
 export class StoreListItemComponent implements OnChanges {
     @Input() store: any;
+    @Input() index: number;
     @Input() storesSelected: Array<any>;
     @Output() onStoreClick = new EventEmitter();
 

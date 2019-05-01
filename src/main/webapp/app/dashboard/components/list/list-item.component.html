@@ -1,7 +1,12 @@
-<div 
+<tr 
     class="store-item" 
     [ngClass]="{selected: checkStoreSelected()}"
     (click)="handleStoreItemClick()"
 >
-    {{store.id}}
-</div>
+    <td>{{index}}</td>
+    <td>{{store.id}}</td>
+    <td>{{store.address}}</td>
+    <td>{{store.city}}</td>
+    <td>{{store.zipcode}}</td>
+    <td>sample</td>
+</tr>

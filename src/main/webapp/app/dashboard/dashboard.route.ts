@@ -12,25 +12,32 @@ export const DashboardRoutes: Routes = [
         data: {
             breadcrumb: 'dashboard',
             label: 'Dashboard',
-            url: 'dashboard'
+            url: 'dashboard',
+            pageTitle: 'Budderfly - Dashboard',
+            authorities: ['ROLE_ADMIN', 'ROLE_USER']
         },
         // data: {
         //     authorities: ['ROLE_ADMIN', 'ROLE_USER'],
         //     pageTitle: 'dashboard.title'
         // },
-        // canActivate: [UserRouteAccessService],
+        canActivate: [UserRouteAccessService],
         component: DashboardComponent,
         children: [
             {
-                path: '',
-                component: DashboardListComponent
+                path: 'stores',
+                component: DashboardListComponent,
+                data: {
+                    breadcrumb: 'stores',
+                    pageTitle: 'Budderfly - Stores List'
+                }
             },
             {
                 path: 'payments',
                 data: {
                     breadcrumb: 'payments',
                     label: 'Payments',
-                    url: 'payments'
+                    url: 'payments',
+                    pageTitle: 'Budderfly - Payment Form'
                 },
                 component: DashboardPaymentsComponent
             },
@@ -39,7 +46,8 @@ export const DashboardRoutes: Routes = [
                 data: {
                     breadcrumb: 'invoice',
                     label: 'Invoices',
-                    url: 'invoices'
+                    url: 'invoices',
+                    pageTitle: 'Budderfly - Invoices'
                 },
                 component: DashboardInvoiceComponent
             }
