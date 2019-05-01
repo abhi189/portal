@@ -1,39 +1,37 @@
-{
-    "stores": [
-        {
-            "id": "KFC-40001",
-            "address": "6401 SECURITY BOULEVARD",
-            "city": "BALTIMORE",
-            "state": "MD",
-            "zipCode": 21235
-        },
-        {
-            "id": "KFC-40002",
-            "address": "6401 SECURITY BOULEVARD",
-            "city": "BALTIMORE",
-            "state": "MD",
-            "zipCode": 21235
-        },
-        {
-            "id": "KFC-40003",
-            "address": "6401 SECURITY BOULEVARD",
-            "city": "BALTIMORE",
-            "state": "MD",
-            "zipCode": 21235
-        },
-        {
-            "id": "KFC-40004",
-            "address": "6401 SECURITY BOULEVARD",
-            "city": "BALTIMORE",
-            "state": "MD",
-            "zipCode": 21235
-        },
-        {
-            "id": "KFC-40005",
-            "address": "6401 SECURITY BOULEVARD",
-            "city": "BALTIMORE",
-            "state": "MD",
-            "zipCode": 21235
-        }
-    ]
-}
+[
+    {
+        "id": "KFC-40001",
+        "address": "6401 SECURITY BOULEVARD",
+        "city": "BALTIMORE",
+        "state": "MD",
+        "zipCode": 21235
+    },
+    {
+        "id": "KFC-40002",
+        "address": "6401 SECURITY BOULEVARD",
+        "city": "BALTIMORE",
+        "state": "MD",
+        "zipCode": 21235
+    },
+    {
+        "id": "KFC-40003",
+        "address": "6401 SECURITY BOULEVARD",
+        "city": "BALTIMORE",
+        "state": "MD",
+        "zipCode": 21235
+    },
+    {
+        "id": "KFC-40004",
+        "address": "6401 SECURITY BOULEVARD",
+        "city": "BALTIMORE",
+        "state": "MD",
+        "zipCode": 21235
+    },
+    {
+        "id": "KFC-40005",
+        "address": "6401 SECURITY BOULEVARD",
+        "city": "BALTIMORE",
+        "state": "MD",
+        "zipCode": 21235
+    }
+]

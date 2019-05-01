@@ -1,0 +1,19 @@
+<section>
+    <h1>Stores</h1>
+    <div *ngIf="!storeList$ | async">
+        loading...
+    </div>
+    <div *ngIf="storeList$ | async" class="stores-list">
+        <jhi-store-list-item 
+            *ngFor="let store of storeList$ | async"
+            [store]="store"
+            (onStoreClick)="handleStoreClick($event)"
+            [storesSelected]="storesSelected"
+        >
+        </jhi-store-list-item>
+    </div>
+    <div class="action-bar" [ngClass]="{visible: storesSelected.length}">
+        <button class="btn" (click)="payByETF()">Pay By etf</button>
+        <button class="btn" (click)="payByCheque()">Pay By cheque</button>
+    </div>
+</section>

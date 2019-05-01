@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardChildrenModule } from './dashboard-children.module';
 import { UserRouteAccessService } from 'app/core';
+import { DashboardListComponent } from './components/list/list.component';
 import { DashboardPaymentsComponent } from './components/payments/payments.component';
 import { DashboardInvoiceComponent } from './components/invoices/invoice.component';
 
@@ -20,6 +21,10 @@ export const DashboardRoutes: Routes = [
         // canActivate: [UserRouteAccessService],
         component: DashboardComponent,
         children: [
+            {
+                path: '',
+                component: DashboardListComponent
+            },
             {
                 path: 'payments',
                 data: {

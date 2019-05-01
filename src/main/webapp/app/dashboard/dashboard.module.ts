@@ -7,6 +7,8 @@ import { DashboardNavbarComponent } from './components/navbar/navbar.component';
 import { DashboardSidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardPaymentsComponent } from './components/payments/payments.component';
 import { DashboardInvoiceComponent } from './components/invoices/invoice.component';
+import { DashboardListComponent } from './components/list/list.component';
+import { StoreListItemComponent } from './components/list/list-item.component';
 import { DashboardRoutes } from './dashboard.route';
 
 @NgModule({
@@ -16,7 +18,9 @@ import { DashboardRoutes } from './dashboard.route';
         DashboardSidebarComponent,
         DashboardPaymentsComponent,
         DashboardInvoiceComponent,
-        DashboardComponent
+        DashboardComponent,
+        DashboardListComponent,
+        StoreListItemComponent
     ],
     exports: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
