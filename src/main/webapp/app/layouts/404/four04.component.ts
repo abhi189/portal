@@ -12,6 +12,6 @@ export class Four04Component implements OnInit {
     ngOnInit() {}
 
     redirectToHome() {
-        this.router.navigate(['/dashboard/stores']);
+        this.router.navigate(['dashboard']);
     }
 }

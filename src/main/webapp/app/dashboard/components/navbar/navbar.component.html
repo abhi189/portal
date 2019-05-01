@@ -2,7 +2,11 @@
     <div class="navbar">
         <div class="nav-left lhs">
             <div class="navbar-brand hidden-sm">
-                <a href='/'>
+                <a 
+                    [routerLink]="['/dashboard']"
+                    routerLinkActive="active" 
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
                     <img src='../../../../content/images/budderfly-logo-primary-large.png' alt='budderfly' />
                 </a>
             </div>

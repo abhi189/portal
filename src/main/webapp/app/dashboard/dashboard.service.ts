@@ -14,7 +14,7 @@ export class Dashboard {
         return new Observable(observer => {
             setTimeout(() => {
                 observer.next(stores);
-            }, 1000);
+            }, 0);
         });
     }
 }

@@ -13,16 +13,26 @@ export const DashboardRoutes: Routes = [
             breadcrumb: 'dashboard',
             label: 'Dashboard',
             url: 'dashboard',
-            pageTitle: 'Budderfly - Dashboard',
-            authorities: ['ROLE_ADMIN', 'ROLE_USER']
+            pageTitle: 'Budderfly - Dashboard'
+            // authorities: ['ROLE_ADMIN', 'ROLE_USER']
         },
         // data: {
         //     authorities: ['ROLE_ADMIN', 'ROLE_USER'],
         //     pageTitle: 'dashboard.title'
         // },
-        canActivate: [UserRouteAccessService],
+        // canActivate: [UserRouteAccessService],
         component: DashboardComponent,
+        // children: [
+        //     {
+        //         loadChildren: './dashboard-children.module#DashboardChildrenModule'
+        //     }
+        // ]
         children: [
+            {
+                path: '',
+                redirectTo: 'stores',
+                pathMatch: 'full'
+            },
             {
                 path: 'stores',
                 component: DashboardListComponent,
