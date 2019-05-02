@@ -42,6 +42,7 @@ export class DashboardPaymentsComponent implements OnInit {
     constructor(private router: Router, private dashboard: Dashboard) {}
 
     ngOnInit() {
+        this.selectedStores = [];
         this.dashboard.storesSelected$.subscribe(
             res => {
                 this.selectedStores = res;

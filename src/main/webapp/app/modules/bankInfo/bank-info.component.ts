@@ -21,6 +21,7 @@ export class BankInfoComponent implements OnInit {
     @Input() showLogout: boolean;
     @Input() showLogo: boolean;
     @Input() showBoxLayout: boolean;
+    @Input() showStore: boolean;
 
     constructor(
         private accountService: AccountService,

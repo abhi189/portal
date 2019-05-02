@@ -12,7 +12,7 @@
             </div>
             <form class="row no-margin" name="form" role="form" (ngSubmit)="submitBankInfo()" #bankInfoForm="ngForm">
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div *ngIf="!showStore" class="form-group">
                         <label class="form-control-label" for="site-no">Site/Store Number<small>*</small></label>
                         <input type="text" class="form-control" id="site-no" name="site-no" 
                             #siteNo="ngModel"
@@ -31,7 +31,7 @@
                             </small>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div *ngIf="!showStore" class="form-group">
                         <label class="form-control-label" for="site-address">Site Address</label>
                         <div class="site-address">{{bankInfo.siteAddress}}</div>
                     </div>
