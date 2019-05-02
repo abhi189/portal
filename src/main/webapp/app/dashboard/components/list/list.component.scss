@@ -20,6 +20,9 @@
                 &:last-child {
                     margin-right: 0px;
                 }
+                &:hover {
+                    color: rgba(0, 0, 0, 0.75);
+                }
             }
         }
     }
@@ -27,6 +30,8 @@
         margin-bottom: 20px;
         font-weight: 500;
         padding: 10px 0;
+        font-size: 32px;
+        color: rgba(0, 0, 0, 0.75);
     }
 }
 .stores-list {

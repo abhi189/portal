@@ -1,9 +1,12 @@
 <section class="payment-form-container">
     <h1>Payments</h1>
     <div *ngIf="selectedStores" class="stores-selected-container">
-        <h3>Selected Stores for {{paymentType}}</h3>
+        <h3>Stores Selected for {{paymentType}}</h3>
         <div class="stores-list">
-            <div *ngFor="let store of selectedStores; let i = index" class="store-item">
+            <div *ngFor="let store of selectedStores; let i = index" 
+                class="store-item"
+                [ngClass]="{disable: store.autoPayEnabled,  enable: !store.autoPayEnabled}"
+            >
                 <div class="store-id">
                     {{store.id}}
                 </div>

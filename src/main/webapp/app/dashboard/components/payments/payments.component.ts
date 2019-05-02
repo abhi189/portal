@@ -42,8 +42,13 @@ export class DashboardPaymentsComponent implements OnInit {
     constructor(private router: Router, private dashboard: Dashboard) {}
 
     ngOnInit() {
-        this.dashboard.storesSelected$.subscribe(res => (this.selectedStores = res), err => console.log(err));
-        // this.selectedStores = this.mockData;
+        this.dashboard.storesSelected$.subscribe(
+            res => {
+                this.selectedStores = res;
+            },
+            err => console.log(err)
+        );
+        this.selectedStores = this.dashboard.selectedStores;
         this.paymentType = this.dashboard.paymentType;
     }
 
