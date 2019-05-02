@@ -10,10 +10,13 @@ import { Dashboard } from '../../dashboard.service';
 })
 export class DashboardListComponent implements OnInit {
     public storesSelected: Array<any>;
-    public storeList$: Observable<any>;
+    public storeList: Array<any>;
+    public filters: any = {};
 
-    constructor(private dashboard: Dashboard) {
-        this.storeList$ = this.dashboard.getStores();
+    constructor(private dashboard: Dashboard, private router: Router) {
+        this.dashboard.getStores().subscribe(res => {
+            this.storeList = res;
+        });
     }
 
     ngOnInit() {
@@ -30,6 +33,56 @@ export class DashboardListComponent implements OnInit {
         }
         this.storesSelected = [...this.storesSelected, store];
         this.setStoreSelected(store);
+    }
+
+    handleSelectAllClick() {
+        if (this.filters.selectAll) {
+            this.filters = {};
+            this.filters.selectAll = true;
+            this.handleFiltersApplied('all');
+            return;
+        }
+        this.handleFiltersApplied();
+    }
+
+    handleSelectAllDisabledClick() {
+        if (this.filters.selectDisabled) {
+            this.filters = {};
+            this.filters.selectDisabled = true;
+            this.handleFiltersApplied('disabled');
+            return;
+        }
+        this.handleFiltersApplied();
+    }
+
+    handleSelectAllEnabledClick() {
+        if (this.filters.selectEnabled) {
+            this.filters = {};
+            this.filters.selectEnabled = true;
+            this.handleFiltersApplied('enabled');
+            return;
+        }
+        this.handleFiltersApplied();
+    }
+
+    handleFiltersApplied(type = '') {
+        this.storeList = this.storeList.map(store => {
+            const { autoPayEnabled } = store;
+            const enable =
+                type === 'all' ? true : autoPayEnabled && type === 'enabled' ? true : !autoPayEnabled && type === 'disabled' ? true : false;
+
+            return {
+                ...store,
+                checkedManually: enable
+            };
+        });
+    }
+
+    handleAutoPayClick(type) {
+        if (this.storeList.filter(s => s.checkedManually).length) {
+            this.dashboard.setSelectedStores(this.storeList.filter(s => s.checkedManually), type);
+            this.router.navigate(['dashboard/payments']);
+        }
     }
 
     handlePaymentChange(event, store) {

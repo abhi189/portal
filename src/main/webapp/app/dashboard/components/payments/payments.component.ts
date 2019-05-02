@@ -1,59 +1,53 @@
-import { Component, EventEmitter, AfterViewInit, Output, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AccountService } from '../../../core/auth/account.service';
-import { AuthServerProvider } from '../../../core/auth/auth-jwt.service';
+import { Dashboard } from '../../dashboard.service';
 
 @Component({
     selector: 'jhi-dashboard-payments',
     templateUrl: './payments.component.html',
     styleUrls: ['./payments.component.scss']
 })
-export class DashboardPaymentsComponent implements OnInit, AfterViewInit {
-    @Output() toggleSideBar = new EventEmitter();
+export class DashboardPaymentsComponent implements OnInit {
     public showUserDetails: boolean;
-    constructor(
-        private elm: ElementRef,
-        private accountService: AccountService,
-        private authServerProvider: AuthServerProvider,
-        private router: Router
-    ) {}
-
-    ngAfterViewInit() {
-        document.addEventListener('click', this.handleDocumentClick.bind(this));
-    }
-
-    handleDocumentClick(event) {
-        if (this.showUserDetails) {
-            const dropdown = this.elm.nativeElement.querySelector('.user-details');
-
-            if (dropdown && !dropdown.contains(event.target)) {
-                this.showUserDetails = false;
-            }
+    public selectedStores: Array<any>;
+    public paymentType: string;
+    private mockData = [
+        {
+            id: 'KFC-40001',
+            address: '6401 SECURITY BOULEVARD',
+            city: 'BALTIMORE',
+            state: 'MD',
+            zipCode: 21235,
+            autoPayEnabled: true
+        },
+        {
+            id: 'KFC-40002',
+            address: '6401 SECURITY BOULEVARD',
+            city: 'BALTIMORE',
+            state: 'MD',
+            zipCode: 21235,
+            autoPayEnabled: false
+        },
+        {
+            id: 'KFC-40003',
+            address: '6401 SECURITY BOULEVARD',
+            city: 'BALTIMORE',
+            state: 'MD',
+            zipCode: 21235,
+            autoPayEnabled: true
         }
-    }
+    ];
+
+    constructor(private router: Router, private dashboard: Dashboard) {}
 
     ngOnInit() {
-        this.showUserDetails = false;
+        this.dashboard.storesSelected$.subscribe(res => (this.selectedStores = res), err => console.log(err));
+        // this.selectedStores = this.mockData;
+        this.paymentType = this.dashboard.paymentType;
     }
 
-    toggleSidebar() {
-        this.toggleSideBar.next();
-    }
-
-    toggleUserDropDown() {
-        this.showUserDetails = !this.showUserDetails;
-    }
-
-    logout() {
-        if (this.accountService.isAuthenticated()) {
-            this.authServerProvider.logout().subscribe(() => {
-                this.accountService.authenticate(null);
-                this.router.navigate(['']);
-            });
-        } else {
-            this.accountService.authenticate(null);
-            this.router.navigate(['']);
-        }
+    removeStore(store: any) {
+        this.dashboard.removeStore(store);
     }
 }

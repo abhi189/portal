@@ -1,9 +1,23 @@
 <section class="payment-form-container">
     <h1>Payments</h1>
+    <div *ngIf="selectedStores" class="stores-selected-container">
+        <h3>Selected Stores for {{paymentType}}</h3>
+        <div class="stores-list">
+            <div *ngFor="let store of selectedStores; let i = index" class="store-item">
+                <div class="store-id">
+                    {{store.id}}
+                </div>
+                <div class="store-action" (click)="removeStore(store)">
+                    x
+                </div>
+            </div>
+        </div>
+    </div>
     <jhi-bank-info-component
         [showLogout]="false"
         [showBoxLayout]="false"
         [showLogo]="false"
+        [showStore]="selectedStores"
     >
     </jhi-bank-info-component>
 </section>

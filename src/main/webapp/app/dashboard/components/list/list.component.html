@@ -1,9 +1,44 @@
 <section class="stores-list-container">
-    <h1>Stores</h1>
-    <!-- <div *ngIf="!storeList$ | async">
-        loading...
-    </div> -->
-    <div *ngIf="storeList$ | async" class="stores-list">
+    <div *ngIf="!storeList" class="loading">
+       <div class="loader"></div>
+    </div>
+    <div *ngIf="storeList" class="header">
+        <h1>Stores</h1>
+        <div class="filters">
+            <label htmlFor="enable">
+                <input type="checkbox"
+                    id="enable"
+                    name="filter-all"
+                    [(ngModel)]="filters.selectAll"
+                    [checked]="filters.selectAll"
+                    (change)="handleSelectAllClick($event)" 
+                />
+                <span class="filter-text">Select All</span>
+            </label>
+            <label htmlFor="enable">
+                <input type="checkbox"
+                    id="enable" 
+                    name="filter-enabled"
+                    [(ngModel)]="filters.selectEnabled"
+                    [checked]="filters.selectEnabled"
+                    (change)="handleSelectAllEnabledClick($event)" 
+                />
+                <span class="filter-text">Select All Enabled</span>
+            </label>
+            <label htmlFor="enable">
+                <input type="checkbox"
+                    id="enable"
+                    name="filter-disabled"
+                    [(ngModel)]="filters.selectDisabled"
+                    [checked]="filters.selectDisabled"
+                    (change)="handleSelectAllDisabledClick($event)" 
+                />
+                <span class="filter-text">Select All Disabled</span>
+            </label>
+        </div>
+    </div>
+    
+    <div *ngIf="storeList" class="stores-list">
         <table class="table table-bordered table-responsive-md table-striped text-center">
             <tbody>
                 <tr>
@@ -14,7 +49,7 @@
                     <th class="text-center">Zipcode</th>
                     <th class="text-center">Autopay(EFT)</th>
                 </tr>
-                <tr *ngFor="let store of storeList$ | async ; let i = index"
+                <tr *ngFor="let store of storeList ; let i = index"
                     class="store-item-row" 
                 >
                     <td>{{i + 1}}</td>
@@ -25,8 +60,9 @@
                     <td class="action">
                         <label htmlFor="action">
                             <input type="checkbox"
-                                [checked]="store.autoPayEnabled" 
-                                id="action" 
+                                id="action"
+                                [(ngModel)]="store.checkedManually"
+                                [checked]="store.checkedManually"
                                 (change)="handlePaymentChange($event,store)" 
                             />
                             <span *ngIf="store.autoPayEnabled" class="disable">Disable</span>
@@ -37,8 +73,8 @@
             </tbody>
         </table>
     </div>
-    <div class="action-bar" [ngClass]="{visible: storesSelected.length}">
-        <button class="btn" (click)="payByETF()">Pay By etf</button>
-        <button class="btn" (click)="payByCheque()">Pay By cheque</button>
+    <div *ngIf="storeList" class="action-bar" [ngClass]="{visible: storesSelected.length}">
+        <button class="btn" (click)="handleAutoPayClick('autopay')">enable autopay</button>
+        <button class="btn" (click)="handleAutoPayClick('cheque')">Pay By cheque</button>
     </div>
 </section>
