@@ -53,7 +53,7 @@ export class LoginComponent implements AfterViewInit {
             .then(() => {
                 this.authenticationError = false;
                 if (this.router.url === '/register' || /^\/activate\//.test(this.router.url) || /^\/reset\//.test(this.router.url)) {
-                    this.router.navigate(['bank-info']);
+                    this.router.navigate(['dasboard']);
                 }
 
                 this.eventManager.broadcast({
@@ -68,7 +68,7 @@ export class LoginComponent implements AfterViewInit {
                     this.stateStorageService.storeUrl(null);
                     this.router.navigate([redirect]);
                 } else {
-                    this.router.navigate(['bank-info']);
+                    this.router.navigate(['dasboard']);
                 }
             })
             .catch(() => {

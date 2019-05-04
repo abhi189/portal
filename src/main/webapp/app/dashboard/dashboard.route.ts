@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
-import { DashboardChildrenModule } from './dashboard-children.module';
 import { UserRouteAccessService } from 'app/core';
 import { DashboardListComponent } from './components/list/list.component';
 import { DashboardPaymentsComponent } from './components/payments/payments.component';
@@ -13,14 +12,14 @@ export const DashboardRoutes: Routes = [
             breadcrumb: 'dashboard',
             label: 'Dashboard',
             url: 'dashboard',
-            pageTitle: 'Budderfly - Dashboard'
-            // authorities: ['ROLE_ADMIN', 'ROLE_USER']
+            pageTitle: 'Budderfly - Dashboard',
+            authorities: ['ROLE_PORTAL']
         },
         // data: {
         //     authorities: ['ROLE_ADMIN', 'ROLE_USER'],
         //     pageTitle: 'dashboard.title'
         // },
-        // canActivate: [UserRouteAccessService],
+        canActivate: [UserRouteAccessService],
         component: DashboardComponent,
         // children: [
         //     {

@@ -37,14 +37,18 @@ export class RegisterCompleteComponent implements OnInit {
         }
         this.success = false;
         this.registerAccount = {};
-        this.route.paramMap.pipe(switchMap((params: ParamMap) => this.registerComplete.validateToken(params.get('tokenId')))).subscribe(
-            res => {
-                console.log('Response: ', res);
-            },
-            err => {
-                console.log('Error: ', err);
-            }
-        );
+        const tokenJson = this.registerComplete.parseJwt(this.route.snapshot.params['tokenId']);
+        if (tokenJson && tokenJson.email) {
+            this.registerAccount.email = tokenJson.email;
+        }
+        // this.route.paramMap.pipe(switchMap((params: ParamMap) => this.registerComplete.validateToken(params.get('tokenId')))).subscribe(
+        //     res => {
+        //         console.log('Response: ', res);
+        //     },
+        //     err => {
+        //         console.log('Error: ', err);
+        //     }
+        // );
     }
 
     register() {

@@ -5,7 +5,6 @@ import { PortalSharedModule } from 'app/shared';
 
 import {
     PasswordStrengthBarComponent,
-    RegisterComponent,
     ActivateComponent,
     PasswordComponent,
     PasswordResetInitComponent,
@@ -18,7 +17,6 @@ import {
     imports: [PortalSharedModule, RouterModule.forChild(accountState)],
     declarations: [
         ActivateComponent,
-        RegisterComponent,
         PasswordComponent,
         PasswordStrengthBarComponent,
         PasswordResetInitComponent,

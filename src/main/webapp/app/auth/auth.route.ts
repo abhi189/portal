@@ -4,7 +4,7 @@ import { UserRouteAccessService } from 'app/core';
 
 export const AuthRoutes: Routes = [
     {
-        path: 'register/token/:tokenId',
+        path: 'register/:tokenId',
         data: {
             // authorities: ['ROLE_ADMIN', 'ROLE_USER'],
             pageTitle: 'register.title'
