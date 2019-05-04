@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginModalService } from 'app/core/login/login-modal.service';
 
 @Component({
     selector: 'jhi-home',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
     activeForm: string;
 
-    constructor() {}
+    constructor(private loginModalService: LoginModalService) {}
 
     ngOnInit() {
         this.activeForm = 'login';

@@ -35,6 +35,6 @@ export class BankingInfo {
     }
 
     getStoreInfoById(storeNo: string): Observable<any> {
-        return this.http.get(`https://qa2ms.budderfly.com/injobs/api/sites/sites-by-budderfly-id/${storeNo}`);
+        return this.http.get(`${SERVER_API_URL}/injobs/api/sites/sites-by-budderfly-id/${storeNo}`);
     }
 }
