@@ -15,7 +15,7 @@
                 />
                 <span class="filter-text">Select All</span>
             </label>
-            <label htmlFor="enable">
+            <!-- <label htmlFor="enable">
                 <input type="checkbox"
                     id="enable" 
                     name="filter-enabled"
@@ -34,7 +34,7 @@
                     (change)="handleSelectAllDisabledClick($event)" 
                 />
                 <span class="filter-text">Select All Disabled</span>
-            </label>
+            </label> -->
         </div>
     </div>
     
@@ -47,6 +47,7 @@
                     <th class="text-center">Address</th>
                     <th class="text-center">City</th>
                     <th class="text-center">Zipcode</th>
+                    <th class="text-center">Autopay Status</th>
                     <th class="text-center">Autopay(EFT)</th>
                 </tr>
                 <tr *ngFor="let store of storeList ; let i = index"
@@ -57,16 +58,19 @@
                     <td>{{store.address}}</td>
                     <td>{{store.city}}</td>
                     <td>{{store.zipCode}}</td>
+                    <td class="status">
+                        <span *ngIf="store.autoPayEnabled" class="disable">Enabled</span>
+                        <span *ngIf="!store.autoPayEnabled" class="enable">Not Enabled</span>
+                    </td>
                     <td class="action">
-                        <label htmlFor="action">
+                        <label *ngIf="!store.autoPayEnabled" htmlFor="action">
                             <input type="checkbox"
                                 id="action"
                                 [(ngModel)]="store.checkedManually"
                                 [checked]="store.checkedManually"
                                 (change)="handlePaymentChange($event,store)" 
                             />
-                            <span *ngIf="store.autoPayEnabled" class="disable">Disable</span>
-                            <span *ngIf="!store.autoPayEnabled" class="enable">Enable</span>
+                            Enable Now
                         </label>
                     </td>
                 </tr>
@@ -75,6 +79,6 @@
     </div>
     <div *ngIf="storeList" class="action-bar" [ngClass]="{visible: storesSelected.length}">
         <button class="btn" (click)="handleAutoPayClick('autopay')">enable autopay</button>
-        <button class="btn" (click)="handleAutoPayClick('cheque')">Pay By cheque</button>
+        <!-- <button class="btn" (click)="handleAutoPayClick('cheque')">Pay By cheque</button> -->
     </div>
 </section>

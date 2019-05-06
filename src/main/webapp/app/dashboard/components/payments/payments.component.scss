@@ -62,4 +62,28 @@
             }
         }
     }
+    .routingImgModal {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+        transform: scale(0, 0);
+        transition: 250ms all ease-in;
+        &.open {
+            transform: scale(1, 1);
+        }
+        &_close {
+            position: absolute;
+            top: 10%;
+            color: #fff;
+            right: 10%;
+            cursor: pointer;
+        }
+    }
 }

@@ -46,7 +46,7 @@ export const DashboardRoutes: Routes = [
                     breadcrumb: 'payments',
                     label: 'Payments',
                     url: 'payments',
-                    pageTitle: 'Budderfly - Payment Form'
+                    pageTitle: 'Budderfly - Autopay Form'
                 },
                 component: DashboardPaymentsComponent
             },

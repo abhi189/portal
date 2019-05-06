@@ -3,7 +3,12 @@
     <div *ngIf="" class=""></div>
     <div *ngIf="selectedStores" class="stores-selected-container">
         <h3>Stores Selected for {{paymentType}}</h3>
-        <div class="stores-list">
+        <div *ngIf="showSelectedStoresError">
+            <small class="form-text text-danger">
+                Please select atleast one store to enable Autopay.
+            </small>
+        </div>
+        <div *ngIf="!showSelectedStoresError" class="stores-list">
             <div *ngFor="let store of selectedStores; let i = index" 
                 class="store-item"
                 [ngClass]="{disable: store.autoPayEnabled,  enable: !store.autoPayEnabled}"
@@ -22,6 +27,13 @@
         [showBoxLayout]="false"
         [showLogo]="false"
         [showStore]="selectedStores"
+        (openRoutingImg)="handleRoutingImgOpen()"
     >
     </jhi-bank-info-component>
+    <div *ngIf="showRoutingImage" class="routingImgModal" [ngClass]="{open : showRoutingImage}">
+        <div class="routingImgModal_close" (click)="closeRoutingImgModal()">close</div>
+        <div class="routingImgModal_image">
+            <img src="https://s3-us-west-2.amazonaws.com/zforms/images/check-image.png" alt='Routing Number Indication'/>
+        </div>
+    </div>
 </section>

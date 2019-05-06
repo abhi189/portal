@@ -9,51 +9,43 @@ import { Dashboard } from '../../dashboard.service';
     styleUrls: ['./payments.component.scss']
 })
 export class DashboardPaymentsComponent implements OnInit {
-    public showUserDetails: boolean;
+    public showSelectedStoresError: boolean;
     public selectedStores: Array<any>;
     public paymentType: string;
-    private mockData = [
-        {
-            id: 'KFC-40001',
-            address: '6401 SECURITY BOULEVARD',
-            city: 'BALTIMORE',
-            state: 'MD',
-            zipCode: 21235,
-            autoPayEnabled: true
-        },
-        {
-            id: 'KFC-40002',
-            address: '6401 SECURITY BOULEVARD',
-            city: 'BALTIMORE',
-            state: 'MD',
-            zipCode: 21235,
-            autoPayEnabled: false
-        },
-        {
-            id: 'KFC-40003',
-            address: '6401 SECURITY BOULEVARD',
-            city: 'BALTIMORE',
-            state: 'MD',
-            zipCode: 21235,
-            autoPayEnabled: true
-        }
-    ];
+    public showRoutingImage: boolean;
 
     constructor(private router: Router, private dashboard: Dashboard) {}
 
     ngOnInit() {
         this.selectedStores = [];
+        this.showRoutingImage = false;
         this.dashboard.storesSelected$.subscribe(
             res => {
                 this.selectedStores = res;
+                this.showSelectedStoresError = false;
+                if (!res.length) {
+                    this.showSelectedStoresError = true;
+                }
             },
             err => console.log(err)
         );
-        this.selectedStores = this.dashboard.selectedStores;
-        this.paymentType = this.dashboard.paymentType;
+        if (this.dashboard.paymentType && !this.dashboard.selectedStores) {
+            this.showSelectedStoresError = true;
+        } else {
+            this.selectedStores = this.dashboard.selectedStores;
+            this.paymentType = this.dashboard.paymentType;
+        }
     }
 
     removeStore(store: any) {
         this.dashboard.removeStore(store);
+    }
+
+    handleRoutingImgOpen() {
+        this.showRoutingImage = true;
+    }
+
+    closeRoutingImgModal() {
+        this.showRoutingImage = false;
     }
 }

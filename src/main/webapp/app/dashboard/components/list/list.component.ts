@@ -70,7 +70,11 @@ export class DashboardListComponent implements OnInit {
             const { autoPayEnabled } = store;
             const enable =
                 type === 'all' ? true : autoPayEnabled && type === 'enabled' ? true : !autoPayEnabled && type === 'disabled' ? true : false;
-
+            if (autoPayEnabled) {
+                return {
+                    ...store
+                };
+            }
             return {
                 ...store,
                 checkedManually: enable

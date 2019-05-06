@@ -45,7 +45,7 @@
     table {
         tr {
             td {
-                &.action {
+                &.status {
                     span {
                         display: inline-block;
                         padding: 0.25em 0.4em;
@@ -56,11 +56,11 @@
                         white-space: nowrap;
                         vertical-align: baseline;
                         border-radius: 0.25rem;
-                        &.enable {
+                        &.disable {
                             color: #fff;
                             background-color: #4dbd74;
                         }
-                        &.disable {
+                        &.enable {
                             color: #fff;
                             background-color: #f86c6b;
                         }

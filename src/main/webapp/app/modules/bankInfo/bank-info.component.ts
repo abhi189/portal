@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { BankingInfo } from './bank-info.service';
 import { AccountService } from '../../core/auth/account.service';
@@ -22,6 +22,7 @@ export class BankInfoComponent implements OnInit {
     @Input() showLogo: boolean;
     @Input() showBoxLayout: boolean;
     @Input() showStore: boolean;
+    @Output() openRoutingImg = new EventEmitter();
 
     constructor(
         private accountService: AccountService,
@@ -60,6 +61,10 @@ export class BankInfoComponent implements OnInit {
 
     resetBankForm() {
         this.bankInfo = {};
+    }
+
+    handleRoutingImgClick() {
+        this.openRoutingImg.next();
     }
 
     handleStoreNumberChange(siteNo: string) {
